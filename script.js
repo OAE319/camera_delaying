@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
     let bufferDurationSeconds = 1.0;
     
     // **[閃退修正]** Ring Buffer 相關變數
-    const MAX_SAFE_FRAMES = 180; // 最大緩衝幀數 (約 3s @ 60fps)
+    const MAX_SAFE_FRAMES = 600; // 最大緩衝幀數 (約 3s @ 60fps)
     let frameBufferPool = [];    // 預先建立的 Canvas "池"
     let currentBufferIndex = 0;  // 目前寫入到 "池" 的索引
     let framesFilled = 0;        // 目前 "池" 中有多少幀
@@ -221,3 +221,4 @@ window.addEventListener('load', () => {
     // 啟動相機
     setupCamera();
 });
+
