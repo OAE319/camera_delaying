@@ -1,0 +1,56 @@
+/* 讓 App 填滿整個畫面 */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* 隱藏捲軸 */
+    background-color: #000;
+}
+
+/* 畫布 (Canvas) 填滿全螢幕 */
+#display-canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 關鍵：保持比例並填滿，修正拉伸 */
+}
+
+/* 隱藏原始的 video 元素 */
+#video-feed {
+    display: none;
+}
+
+/* 控制項的樣式 */
+.controls {
+    position: absolute; /* 疊在 Canvas 上方 */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px;
+    box-sizing: border-box; /* 讓 padding 不會撐爆寬度 */
+    font-family: Arial, sans-serif;
+    
+    /* **[Bug 2 修正]** 加入轉場動畫 */
+    transition: transform 0.3s ease-in-out; 
+}
+
+/* **[Bug 2 修正]** 新增 .hidden 樣式 */
+.controls.hidden {
+    /* 往下移出畫面外 */
+    transform: translateY(100%); 
+}
+
+.control-group {
+    margin-bottom: 10px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+}

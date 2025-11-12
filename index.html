@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>即時殘影相機</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video id="video-feed" playsinline autoplay muted></video>
+
+    <canvas id="display-canvas"></canvas>
+
+    <div class="controls">
+        <div class="control-group">
+            <label for="duration-slider">緩衝秒數 (x): <span id="duration-label">1.0</span>s</label>
+            <input type="range" id="duration-slider" min="0.5" max="5.0" step="0.1" value="1.0">
+        </div>
+        <div class="control-group">
+            <label for="slices-slider">疊合張數 (y): <span id="slices-label">5</span></label>
+            <input type="range" id="slices-slider" min="2" max="15" step="1" value="5">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
